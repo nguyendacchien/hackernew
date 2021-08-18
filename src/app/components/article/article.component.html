@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-9">
+      <div>
+        <h3>Add new article</h3>
+        <input type="text" placeholder="title" [(ngModel)]="article.title">
+        <input type="text" placeholder="url" [(ngModel)]="article.url">
+        <button (click)="addArticle()">Add</button>
+
+      </div>
+      <hr>
+      <h2>Hackernew</h2>
+      <div *ngFor="let art of articles">
+        <a href="{{art.url}}">{{art.title}}</a>
+        <app-like></app-like>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
